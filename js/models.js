@@ -248,35 +248,3 @@ isFavorite(story) {
   return this.favorites.some(val => val.storyId === story.storyId);
 }
 }
-
-/**Implement Infinite (not actually infinite as there aren't enough stories) Scroll
-
-//Initialize variables to keep track of the current page and the stories to load per page
-let allStoriesPage = 1;
-let storiesPerPage = 25;
-
-function loadMoreStories() {
-  console.debug("loadMoreStories");
-
-  //Calculate the range of stories to load based on the current page
-  const startIndex = (allStoriesPage - 1) * storiesPerPage;
-  const endIndex = startIndex + storiesPerPage;
-
-  //Constructor should store all stories in StoryList object--otherwise, we could implement this.
-  for (let i = startIndex; i < endIndex && i < storyList.stories.length; i++) {
-    const $story = generateStoryMarkup(storyList.stories[i]);
-    $allStoriesList.append($story);
-  }
-  //Increment the current page
-  allStoriesPage++;
-}
-
-//Event listener for scroll
-window.addEventListener("scroll", () => {
-  const { scrollTop, scrollHeight, clientHeight } = document.documentElement;
-
-  //Check if the user has scrolled to the bottom
-  if (scrollTop + clientHeight >= scrollHeight - 10) {
-    loadMoreStories();
-  }
-});  */
